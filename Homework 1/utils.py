@@ -28,7 +28,7 @@ def lag_features(df, features, lags):
 
 def compute_reg_metrics(y, y_pred):
     R2 = np.round(r2_score(y, y_pred), 5)
-    RMSE = np.round(mean_squared_error(y, y_pred), 6)
+    RMSE = np.sqrt(np.round(mean_squared_error(y, y_pred), 6))
     return R2, RMSE
 
 def regression_metrics(y_train, y_train_pred, y_test, y_test_pred):
